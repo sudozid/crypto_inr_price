@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cryptocurrency Prices Chart</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+        .title {
+            text-align: center;
+            color: #333;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        table, th, td {
+            border: 1px solid #eaeaea;
+        }
+        th {
+            padding: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+        }
+        td {
+            padding: 10px;
+            text-align: right;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .highlighted {
+            background-color: #007bff !important;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Cryptocurrency Prices Chart</h1>
+        <img src="data:image/png;base64,{{ image_data }}" alt="Cryptocurrency Prices Chart">
+        <h2 class="title">Price Data</h2>
+        <div class="table-responsive">
+            {{ data_table|safe }}
+        </div>
+    </div>
+
+    <script>
+        // Example JavaScript for interactive features
+        document.addEventListener('DOMContentLoaded', function() {
+            var tableRows = document.querySelectorAll('table tr');
+            
+            tableRows.forEach(function(row, index) {
+                // Skip the header row
+                if (index === 0) return;
+                
+                row.addEventListener('mouseover', function() {
+                    this.classList.add('highlighted');
+                });
+                row.addEventListener('mouseout', function() {
+                    this.classList.remove('highlighted');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
