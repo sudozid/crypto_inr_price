@@ -1,4 +1,4 @@
-# crypto_inr_price
+# Crypto INR Price
 A python script to find 'black' rate of Indian Rupee in the P2P Crypto market. 
 
 Like every other currency, Indian Rupee to has a 'black market' exchange rate. This rate varies quite a bit by exchange to exchange. Usually its 10-12% above the midmarket rate.
